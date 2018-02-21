@@ -1,6 +1,6 @@
 #!/bin/bash
 iatest=$(expr index "$-" i)
-#PATH=$PATH:~/Programs/android-sdk-linux/platform-tools
+PATH=$PATH:~/Programs/android-sdk-linux/platform-tools
 
 #######################################################
 # SOURCED ALIAS'S AND SCRIPTS BY zachbrowne.me

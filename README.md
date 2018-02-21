@@ -1,6 +1,6 @@
 
 # bashrc for linux
----
+
 
 ### aliases
 * pico = edit
@@ -51,5 +51,5 @@
 * lf="ls -l | egrep -v '^d'" `# files only`
 * ldir="ls -l | egrep '^d'" `# directories only`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE0NzQ4MDk2XX0=
+eyJoaXN0b3J5IjpbMTY5NzU1NTAwMV19
 -->

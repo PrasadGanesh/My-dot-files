@@ -698,10 +698,10 @@ PROMPT_COMMAND='__setprompt'
 alias c="clear"
 alias ..="cd .."
 alias l="ls"
-#alias android23="cd ~/Programs/android-sdk-linux/emulator &&  sudo ./emulator -avd Nexus_5_API_23 -netdelay none -netspeed full -use-system-libs"
-#alias android25="cd ~/Programs/android-sdk-linux/emulator &&  sudo ./emulator -avd Nexus_5X_API_25 -netdelay none -netspeed full -use-system-libs"
-#alias a="cd /usr/local/android-studio/bin && sudo ./studio.sh"
-#alias tablet24="cd ~/Programs/android-sdk-linux/emulator &&  sudo ./emulator -avd Nexus_10_API_24 -netdelay none -netspeed full -use-system-libs"
+alias android23="cd ~/Programs/android-sdk-linux/emulator &&  sudo ./emulator -avd Nexus_5_API_23 -netdelay none -netspeed full -use-system-libs"
+alias android25="cd ~/Programs/android-sdk-linux/emulator &&  sudo ./emulator -avd Nexus_5X_API_25 -netdelay none -netspeed full -use-system-libs"
+alias a="cd /usr/local/android-studio/bin && sudo ./studio.sh"
+alias tablet24="cd ~/Programs/android-sdk-linux/emulator &&  sudo ./emulator -avd Nexus_10_API_24 -netdelay none -netspeed full -use-system-libs"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/ganesh/.sdkman"

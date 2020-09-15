@@ -576,6 +576,30 @@ trim()
 # Set the ultimate amazing command prompt
 #######################################################
 
+function git_branch {
+  # Shows the current branch if in a git repository
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \(\1\)/';
+}
+
+function random_element {
+  declare -a array=("$@")
+  r=$((RANDOM % ${#array[@]}))
+  printf "%s\n" "${array[$r]}"
+}
+
+
+# Default Prompt
+setEmoji () {
+  EMOJI="$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨 💻 🦸 🧝 🧞 🧙 👨 🚀 👨 🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱 )"
+  #DISPLAY_DIR='$(dirs)'
+  DISPLAY_BRANCH='$(git_branch)'
+  PROMPT="${GREEN}${DISPLAY_BRANCH}${NOCOLOR} ${EMOJI} ";
+}
+
+# newRandomEmoji () {
+#   setEmoji 
+# }
+setEmoji
 alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
 function __setprompt
 {
@@ -679,7 +703,7 @@ function __setprompt
 	PS1+="\n"
 
 	if [[ $EUID -ne 0 ]]; then
-		PS1+="\[${GREEN}\]>\[${NOCOLOR}\] " # Normal user
+		PS1+="\[${GREEN}\]$PROMPT >\[${NOCOLOR}\] " # Normal user
 	else
 		PS1+="\[${RED}\]>\[${NOCOLOR}\] " # Root user
 	fi
